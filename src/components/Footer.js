@@ -1,19 +1,19 @@
 import React from 'react'
 import styled from 'styled-components';
 
-const Footer = () => {
+const Footer = ({feel, humi, wind}) => {
   return (
     <Container>
       <Feels>
-        <p className='bold'>30°C</p>
+        {feel ? <p className='bold'>{feel.feels_like} °F</p> : null}
         <p>Feels Like</p>
       </Feels>
       <Humidity>
-        <p className='bold'>20%</p>
+        {humi ? <p className='bold'>{humi.humidity} %</p> : null}
         <p>Humidity</p>
       </Humidity>
       <WIND>
-        <p className='bold'>12 MPH</p>
+        {wind ? <p className='bold'>{wind.speed} MPH</p> : null}
         <p>Wind Speed</p>
       </WIND>
     </Container>

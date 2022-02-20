@@ -1,17 +1,17 @@
 import React from 'react'
 import styled from 'styled-components';
 
-const Header = () => {
+const Header = ({city, temp, desc}) => {
   return (
     <Container>
       <Location>
-        <p>Dallas</p>
+        <p>{city}</p>
       </Location>
       <Temperature>
-        <h1>30°C</h1>
+        {temp ? <h1>{temp.temp}°F</h1> : null}
       </Temperature>
       <Description>
-        <p>Clouds</p>
+        {desc ? <p>{desc[0].main}</p> : null}
       </Description>
     </Container>
   )
